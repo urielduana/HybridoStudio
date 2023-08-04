@@ -44,9 +44,9 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->save();
 
-            return redirect()->route('products.index')->with('success', 'Producto creado correctamente.');
+            return redirect()->route('products.index')->with('success', 'Product created successfully.');
         } catch (\Exception $e) {
-            return redirect()->route('products.create')->with('error', 'Error al crear el producto.');
+            return redirect()->route('products.create')->with('error', 'Error creating product.');
         }
     }
 
@@ -87,9 +87,9 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->save();
 
-            return redirect()->route('products.index')->with('success', 'Producto actualizado correctamente.');
+            return redirect()->route('products.index')->with('success', 'Product added successfully.');
         } catch (\Exception $e) {
-            return redirect()->route('products.index')->with('error', 'Error al actualizar el producto.');
+            return redirect()->route('products.index')->with('error', 'Error updating product.');
         }
     }
 
@@ -103,9 +103,9 @@ class ProductController extends Controller
             $product = Product::findOrFail($id);
             $product->delete();
 
-            return redirect()->route('products.index')->with('success', 'Producto eliminado correctamente.');
+            return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
         } catch (\Exception $e) {
-            return redirect()->route('products.index')->with('error', 'Error al eliminar el producto.');
+            return redirect()->route('products.index')->with('error', 'Error deleting product.');
         }
     }
 }
