@@ -13,10 +13,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        foreach ($products as $product) {
-            $product->category->makeHidden(['created_at', 'updated_at']);
-        }
+        $products = Product::with('category')->paginate(25); // Pagina los resultados y muestra 10 productos por página.
+
         return view('index', compact('products'));
     }
 
