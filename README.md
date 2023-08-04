@@ -22,7 +22,7 @@ CRUD de productos con Laravel 10, Blade y MySQL.
 
 ## Instalación
 
-1. Clona este repositorio: `git clone URL_DEL_REPOSITORIO`
+1. Clona este repositorio: `git clone https://github.com/urielduana/HybridoStudio.git`
 2. Instala las dependencias: `composer install`
 3. Copia el archivo `.env.example` y renómbralo a `.env`
 4. Configura tu archivo `.env` con las variables de entorno necesarias
