@@ -16,7 +16,7 @@ class Product extends Seeder
         // This function generates 150 products with random data
         $faker = \Faker\Factory::create();
         for ($i = 0; $i < 150; ++$i) {
-            DB::table('product')->insert([
+            DB::table('products')->insert([
                 'name' => $faker->word,
                 'price' => $faker->randomFloat(2, 0, 1000),
                 'barcode' => $faker->ean13,
