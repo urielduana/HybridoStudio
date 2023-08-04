@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg bg-primary bg-gradient">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" href="#">Prueba</a>
+            <a class="navbar-brand text-light" href="/">Hybrido Studio</a>
         </div>
     </nav>
 
