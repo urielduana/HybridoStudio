@@ -24,6 +24,7 @@
                     <th>Category</th>
                     <th>View</th>
                     <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
                 @foreach ($products as $product)
                     <tr>
@@ -43,6 +44,11 @@
                                 @method('DELETE')
                                 <button><i class="fa fa-trash"></i></button>
                             </form>
+                        </td>
+                        <td>
+                            <a href="{{ route('products.edit', $product->id) }}">
+                                <button><i class="fa fa-edit"></i></button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
