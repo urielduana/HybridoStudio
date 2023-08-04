@@ -17,10 +17,9 @@ return new class extends Migration
             $table->decimal('price');
             $table->string('barcode')->unique();
             $table->integer('stock');
-            $table->foreignId('category_id')
-                ->constrained()
-                ->onDelete('cascade');
             $table->timestamps();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('category');
         });
     }
 
