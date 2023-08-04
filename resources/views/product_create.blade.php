@@ -14,47 +14,48 @@
             <form method="POST" action="{{ route('products.store') }}">
                 @csrf
                 <div>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
-                    <u>
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" id="name" class="form-control w-25">
+                    <div class="form-text text-danger">
                         {{ $errors->first('name') }}
-                    </u>
+                    </div>
                 </div>
                 <div>
-                    <label for="price">Price</label>
-                    <input type="number" name="price" id="price" step="0.01">
-                    <u>
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" name="price" id="price" step="0.01" class="form-control w-25">
+                    <div class="form-text text-danger">
                         {{ $errors->first('price') }}
-                    </u>
+                    </div>
                 </div>
                 <div>
-                    <label for="barcode">Barcode</label>
-                    <input type="number" name="barcode" id="barcode">
-                    <u>
+                    <label for="barcode" class="form-label">Barcode</label>
+                    <input type="number" name="barcode" id="barcode" class="form-control w-25">
+                    <div class="form-text text-danger">
                         {{ $errors->first('barcode') }}
-                    </u>
+                    </div>
                 </div>
                 <div>
-                    <label for="stock">Stock</label>
-                    <input type="number" name="stock" id="stock">
-                    <u>
+                    <label for="stock" class="form-label">Stock</label>
+                    <input type="number" name="stock" id="stock" class="form-control w-25">
+                    <div class="form-text text-danger">
                         {{ $errors->first('stock') }}
-                    </u>
+                    </div>
                 </div>
                 <div>
-                    <label for="category_id">Category</label>
-                    <select name="category_id" id="category_id">
+                    <label for="category_id" class="form-label">Category</label>
+                    <select name="category_id" id="category_id" class="form-select w-25">
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
 
                     </select>
-                    <u>
+                    <div class="form-text text-danger">
                         {{ $errors->first('category_id') }}
-                    </u>
+                    </div>
                 </div>
                 <div>
-                    <button type="submit">Create</button>
+                    <button type="submit" class="btn btn-primary my-4"><i
+                            class="fa fa-plus-circle me-2"></i>Submit</button>
                 </div>
             </form>
         </div>

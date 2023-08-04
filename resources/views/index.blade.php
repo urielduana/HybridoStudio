@@ -14,47 +14,47 @@
             <h1>Index Products</h1>
         </div>
         {{-- Add Product Button --}}
-        <div>
+        <div class="d-flex justify-content-end">
             <a href="{{ route('products.create') }}">
-                <button>Add Product</button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-plus-circle me-2"></i>Add Product</button>
             </a>
         </div>
         <hr class="my-3">
         {{-- Table --}}
-        <div>
-            <table>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
                 <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Category</th>
-                    <th>View</th>
-                    <th>Delete</th>
-                    <th>Edit</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">View</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
                 </tr>
                 @foreach ($products as $product)
                     <tr>
-                        <td>{{ $product->id }}</td>
+                        <td scope="row">{{ $product->id }}</td>
                         <td>{{ $product->name }}</td>
-                        <td>{{ $product->price }}</td>
-                        <td>${{ $product->stock }}</td>
+                        <td>${{ $product->price }}</td>
+                        <td>{{ $product->stock }}</td>
                         <td>{{ $product->category->name }}</td>
                         <td>
                             <a href="{{ route('products.show', $product->id) }}">
-                                <button><i class="fa fa-eye"></i></button>
+                                <button type="button" class="btn btn-info"><i class="fa fa-eye"></i></button>
                             </a>
                         </td>
                         <td>
-                            <form method="POST" action="{{ route('products.destroy', $product->id) }}">
+                            <form method="POST" action="{{ route('products.destroy', $product->id) }}" class="m-0">
                                 @csrf
                                 @method('DELETE')
-                                <button><i class="fa fa-trash"></i></button>
+                                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
                         <td>
                             <a href="{{ route('products.edit', $product->id) }}">
-                                <button><i class="fa fa-edit"></i></button>
+                                <button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
                             </a>
                         </td>
                     </tr>

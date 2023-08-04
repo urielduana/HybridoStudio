@@ -9,28 +9,34 @@
 
         <hr class="my-3">
 
-        {{-- Show Data its only to show data --}}
-        <div>
-            <div>
-                <label for="name">Name</label>
-                <p>{{ $product->name }}</p>
-            </div>
-            <div>
-                <label for="price">Price</label>
-                <p>{{ $product->price }}</p>
-            </div>
-            <div>
-                <label for="barcode">Barcode</label>
-                <p>{{ $product->barcode }}</p>
-            </div>
-            <div>
-                <label for="stock">Stock</label>
-                <p>{{ $product->stock }}</p>
-            </div>
-            <div>
-                <label for="category_id">Category</label>
-                <p>{{ $product->category->name }}</p>
-            </div>
+        {{-- Show Data --}}
+
+        <div class="mb-5">
+            <dl class="row">
+                <dt class="col-sm-3">ID: </dt>
+                <dd class="col-sm-9">{{ $product->id }}</dd>
+
+                <dt class="col-sm-3">Name:</dt>
+                <dd class="col-sm-9">{{ $product->name }}</dd>
+
+                <dt class="col-sm-3">BarCode:</dt>
+                <dd class="col-sm-9">{{ $product->barcode }}</dd>
+
+                <dt class="col-sm-3 text-truncate">Price:</dt>
+                <dd class="col-sm-9">{{ $product->price }}</dd>
+
+                <dt class="col-sm-3">Stock:</dt>
+                <dd class="col-sm-9">{{ $product->stock }}</dd>
+
+                <dt class="col-sm-3">Created At:</dt>
+                <dd class="col-sm-9">{{ $product->created_at }}</dd>
+
+                <dt class="col-sm-3">Updated At:</dt>
+                <dd class="col-sm-9">{{ $product->updated_at }}</dd>
+
+                <dt class="col-sm-3">Category</dt>
+                <dd class="col-sm-9">{{ $product->category->name }}</dd>
+            </dl>
         </div>
     </div>
 @endsection
