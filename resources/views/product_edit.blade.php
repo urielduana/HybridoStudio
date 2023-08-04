@@ -45,6 +45,7 @@
                         {{ $errors->first('stock') }}
                     </div>
                 </div>
+                {{-- Select Categories --}}
                 <div>
                     <label for="category_id" class="form-label">Category</label>
                     <select name="category_id" id="category_id" class="form-select w-25">
@@ -57,6 +58,7 @@
                         {{ $errors->first('category_id') }}
                     </div>
                 </div>
+                {{-- Submit Button --}}
                 <div>
                     <button type="submit" class="btn btn-warning my-4"><i class="fa fa-edit me-2"></i>Update</button>
                 </div>

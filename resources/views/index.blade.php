@@ -23,6 +23,7 @@
         {{-- Table --}}
         <div class="table-responsive">
             <table class="table table-striped table-hover align-middle">
+                {{-- Rows --}}
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
@@ -34,17 +35,20 @@
                     <th scope="col">Edit</th>
                 </tr>
                 @foreach ($products as $product)
+                    {{-- Columns --}}
                     <tr>
                         <td scope="row">{{ $product->id }}</td>
                         <td>{{ $product->name }}</td>
                         <td>${{ $product->price }}</td>
                         <td>{{ $product->stock }}</td>
                         <td>{{ $product->category->name }}</td>
+                        {{-- Action - Show --}}
                         <td>
                             <a href="{{ route('products.show', $product->id) }}">
                                 <button type="button" class="btn btn-info"><i class="fa fa-eye"></i></button>
                             </a>
                         </td>
+                        {{-- Action - Delete --}}
                         <td>
                             <form method="POST" action="{{ route('products.destroy', $product->id) }}" class="m-0">
                                 @csrf
@@ -52,6 +56,7 @@
                                 <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
+                        {{-- Action - Edit --}}
                         <td>
                             <a href="{{ route('products.edit', $product->id) }}">
                                 <button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>

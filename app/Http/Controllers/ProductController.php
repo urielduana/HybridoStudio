@@ -87,7 +87,7 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->save();
 
-            return redirect()->route('products.index')->with('success', 'Product added successfully.');
+            return redirect()->route('products.index')->with('success', 'Product updated successfully.');
         } catch (\Exception $e) {
             return redirect()->route('products.index')->with('error', 'Error updating product.');
         }

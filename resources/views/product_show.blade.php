@@ -6,6 +6,12 @@
         <div class="my-3">
             <h1>Show Products</h1>
         </div>
+        {{-- Add Product Button --}}
+        <div class="d-flex justify-content-end">
+            <a href="{{ route('products.edit', $product->id) }}">
+                <button type="button" class="btn btn-warning"><i class="fa fa-edit me-2"></i>Edit Product</button>
+            </a>
+        </div>
 
         <hr class="my-3">
 
