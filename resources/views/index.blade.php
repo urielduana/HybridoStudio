@@ -10,7 +10,7 @@
 
     <div class="container">
         {{-- Title --}}
-        <div>
+        <div class="my-3">
             <h1>Index Products</h1>
         </div>
         {{-- Add Product Button --}}

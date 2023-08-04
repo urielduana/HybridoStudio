@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         {{-- Title --}}
-        <div>
+        <div class="my-3">
             <h1>Show Products</h1>
         </div>
 

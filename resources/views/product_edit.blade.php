@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         {{-- Title --}}
-        <div>
+        <div class="my-3">
             <h1>Edit Product: "{{ $product->name }}"</h1>
         </div>
 
