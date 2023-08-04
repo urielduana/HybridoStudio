@@ -18,3 +18,6 @@ Route::get('/', [ProductController::class, 'index'])
     ->name('products.index');
 Route::resource('products', ProductController::class)
     ->except('index')->names('products');
+// Route::get('/products/index/create', function () {
+//     return view('product_create');
+// })->name('products.index.create');

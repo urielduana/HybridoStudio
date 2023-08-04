@@ -13,9 +13,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('category')->paginate(25); // Pagina los resultados y muestra 10 productos por página.
+        $products = Product::with('category')->paginate(25);
+        $categories = Category::all();
 
-        return view('index', compact('products'));
+        return view('index', compact('products', 'categories'));
     }
 
     /**
@@ -25,7 +26,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
 
-        return view('products_create', compact('categories'));
+        return view('product_create', compact('categories'));
     }
 
     /**
@@ -51,9 +52,11 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        // Simple query
+        $product = Product::find($id);
+        return view('product_show', compact('product'));
     }
 
     /**

@@ -8,8 +8,9 @@
         </div>
         {{-- Add Product Button --}}
         <div>
-
-            <button><i class="fa fa-plus-circle"></i>Add Products</button>
+            <a href="{{ route('products.create') }}">
+                <button>Add Product</button>
+            </a>
         </div>
         <hr class="my-3">
         {{-- Table --}}
@@ -31,7 +32,11 @@
                         <td>{{ $product->price }}</td>
                         <td>${{ $product->stock }}</td>
                         <td>{{ $product->category->name }}</td>
-                        <td><button><i class="fa fa-eye"></i></button></td>
+                        <td>
+                            <a href="{{ route('products.show', $product->id) }}">
+                                <button><i class="fa fa-eye"></i></button>
+                            </a>
+                        </td>
                         <td>
                             <form method="POST" action="{{ route('products.destroy', $product->id) }}">
                                 @csrf
@@ -43,12 +48,10 @@
                 @endforeach
             </table>
         </div>
-
         {{-- Pagination links --}}
         <div>
             {!! $products->links() !!}
         </div>
 
-    </div>
     </div>
 @endsection
