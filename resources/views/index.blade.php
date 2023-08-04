@@ -32,7 +32,13 @@
                         <td>${{ $product->stock }}</td>
                         <td>{{ $product->category->name }}</td>
                         <td><button><i class="fa fa-eye"></i></button></td>
-                        <td><button><i class="fa fa-trash"></i></button></td>
+                        <td>
+                            <form method="POST" action="{{ route('products.destroy', $product->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button><i class="fa fa-trash"></i></button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </table>

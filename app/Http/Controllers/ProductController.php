@@ -23,7 +23,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('products_create', compact('categories'));
     }
 
     /**
@@ -31,7 +33,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $product = new Product();
+            $product->name = $request->name;
+            $product->price = $request->price;
+            $product->barcode = $request->barcode;
+            $product->stock = $request->stock;
+            $product->category_id = $request->category_id;
+            $product->save();
+
+            return redirect()->route('products.index')->with('success', 'Producto creado correctamente.');
+        } catch (\Exception $e) {
+            return redirect()->route('products.index')->with('error', 'Error al crear el producto.');
+        }
     }
 
     /**
@@ -61,8 +75,16 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        try {
+            // dd($id);
+            $product = Product::findOrFail($id);
+            $product->delete();
+
+            return redirect()->route('products.index')->with('success', 'Producto eliminado correctamente.');
+        } catch (\Exception $e) {
+            return redirect()->route('products.index')->with('error', 'Error al eliminar el producto.');
+        }
     }
 }

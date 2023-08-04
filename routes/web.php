@@ -14,4 +14,7 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::resource('/', ProductController::class);
+Route::get('/', [ProductController::class, 'index'])
+    ->name('products.index');
+Route::resource('products', ProductController::class)
+    ->except('index')->names('products');
